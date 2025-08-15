@@ -206,7 +206,22 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-.dk/*
-!.dk/docker-compose.yml
-scripts/.dk-installer/
-*.zip
+# Ignore .dk folder created by dk-installer
+testgen-setup/.dk/
+testgen-setup/dk-tg-credentials.txt
+testgen-setup/*.zip
+testgen-setup/*.log
+testgen-setup/__pycache__/
+testgen-setup/.env
+testgen-setup/local.env
+
+neo4j-pipeline/testgen-setup/dk-tg-credentials.txt
+neo4j-pipeline/testgen-setup/.dk-installer/
+neo4j-pipeline/.DS_Store
+# Optional: Python virtualenvs
+venv/
+.env/
+
+# Ignore Docker volumes and secrets
+**/data/
+**/secrets/
