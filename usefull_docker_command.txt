@@ -44,8 +44,9 @@ docker daemon: execute command and manage docker objects
 			=============	
 
 
-docker-compose down -v
-docker-compose up -d
+docker-compose down -v -- All down
+docker-compose up -d   -- All up
 docker ps 
-
+docker-compose up --build - recreate again
+pip install -r dependency.txt 
 
