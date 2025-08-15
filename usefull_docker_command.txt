@@ -47,6 +47,15 @@ docker daemon: execute command and manage docker objects
 docker-compose down -v -- All down
 docker-compose up -d   -- All up
 docker ps 
-docker-compose up --build - recreate again
+docker exec -it bash
 pip install -r dependency.txt 
+http://localhost:7474/browser/
+
+
+Install .dk
+
+git clone https://github.com/DataKitchen/dataops-testgen.git .dk
+cd .dk
+docker-compose up -d
+
 
