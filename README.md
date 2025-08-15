@@ -37,10 +37,16 @@ docker exec -it python-scripts bash
 pip install -r dependency.txt
 
 4. Setup DataKitchen  - Outisde of container.
+mkdir testgen-setup
+cd neo4j-pipeline/testgen-setup
+curl -O https://raw.githubusercontent.com/DataKitchen/data-observability-installer/main/dk-installer.py
+python3 dk-installer.py tg install
+neo4j-pipeline/testgen-setup/dk-tg-credentials.txt
 
-git clone https://github.com/DataKitchen/dataops-testgen.git .dk
-cd .dk
-docker network create datakitchen-network || true
-docker-compose up -d
+# If TestGen is not already running (after reboot or stopping containers)
+cd neo4j-pipeline/testgen-setup
+python3 dk-installer.py tg start
+
+
 
 
