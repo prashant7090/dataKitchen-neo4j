@@ -1,0 +1,51 @@
+docker:
+os level virtualization
+
+container:
+runnable instance of image , can be run on any OS, isolated from other container. isolated on kernal namespace.
+image: image contains everything which is required to run application. binaries, softwares, dependencies. isolated filesystem is provided by image.
+
+cggroups: manage resources used by container.
+namespace: isolate container - filesystem, networks, hostname, users and process.
+
+DockerFile: set of contains all the commands 
+Docker build: docker builds image by reading instructions from docker file.
+Basic commands:
+docker 
+	run: runs command in new container.
+	start: start container.
+	stop: stop container.
+	build: build image from DockerFile. 
+	exec: executing command on running container.
+.dockerignore - similar to git ignore
+docker daemon: execute command and manage docker objects
+
+	
+		 docker clienet	
+				|
+				|
+			-------------
+			Docker Host
+			-------------
+			Docker Daemon
+			-------------
+				|
+				|
+			============
+			 Image 
+			 Container 
+			 network
+			 volume	
+			===========
+				|
+				|
+			--------------
+			Docker registry
+			=============	
+
+
+docker-compose down -v
+docker-compose up -d
+docker ps 
+
+
