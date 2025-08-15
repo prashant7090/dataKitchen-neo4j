@@ -1,0 +1,24 @@
+services:
+  neo4j:
+    image: neo4j:5.20
+    container_name: neo4j
+    ports:
+      - "7474:7474"  # HTTP (browser)
+      - "7687:7687"  # Bolt (driver)
+    environment:
+      NEO4J_AUTH: neo4j/inglourious_basterds
+    volumes:
+      - neo4j_data:/data
+
+  python:
+    image: python:3.10
+    container_name: python-scripts
+    volumes:
+      - ./scripts:/app
+    working_dir: /app
+    command: tail -f /dev/null  # keep container running
+    depends_on:
+      - neo4j
+
+volumes:
+  neo4j_data:
